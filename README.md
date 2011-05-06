@@ -15,6 +15,7 @@ When to contribut? Please contact [me](https://github.com/metabaron) instead of 
 Usage
 -----
 The code is documented but here is a simple example of how to use the library:
+
 	consumer_key = 'XXXXXX'
 	consumer_secret = 'YYYYYY'
 	username = 'AAAAA'
