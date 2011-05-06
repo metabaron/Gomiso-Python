@@ -28,3 +28,7 @@ The code is documented but here is a simple example of how to use the library:
 		print 'Hello user: ' + json_result['user']['username']
 	else:
 		print 'Something is wrong'
+
+About me
+-------------
+You will find more about me through my [blog](http://blog.metabaron.net)
