@@ -29,6 +29,11 @@ The code is documented but here is a simple example of how to use the library:
 	else:
 		print 'Something is wrong'
 
+Documentation generated using the following command line:
+	>python.exe pydoc.py -w gomiso
+	wrote gomiso.html
+	>
+	
 About me
 -------------
 You will find more about me through my [blog](http://blog.metabaron.net)

@@ -1,0 +1,309 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module gomiso</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>gomiso</strong></big></big> (version 1.0)</font></td
+><td align=right valign=bottom
+></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="cgi.html">cgi</a><br>
+<a href="imp.html">imp</a><br>
+</td><td width="25%" valign=top><a href="oauth2.html">oauth2</a><br>
+<a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="urllib.html">urllib</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="gomiso.html#gomiso">gomiso</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="gomiso">class <strong>gomiso</strong></a></font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="gomiso-addFavorite"><strong>addFavorite</strong></a>(self, media_id)</dt><dd><tt>Marks&nbsp;a&nbsp;new&nbsp;favorite&nbsp;media&nbsp;for&nbsp;authenticated&nbsp;user.<br>
+&nbsp;<br>
+Input:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'media_id':&nbsp;(Required)&nbsp;The&nbsp;media&nbsp;id&nbsp;for&nbsp;the&nbsp;info&nbsp;you&nbsp;would&nbsp;like&nbsp;to&nbsp;favorite.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Output:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-A&nbsp;201&nbsp;response&nbsp;code&nbsp;("created")&nbsp;if&nbsp;the&nbsp;favorite&nbsp;was&nbsp;successful.</tt></dd></dl>
+
+<dl><dt><a name="gomiso-authentification"><strong>authentification</strong></a>(self, consumer_key, consumer_secret, login, password, tokensFile)</dt><dd><tt>Must&nbsp;be&nbsp;call&nbsp;in&nbsp;order&nbsp;to&nbsp;generate&nbsp;authentification&nbsp;tokens&nbsp;for&nbsp;further&nbsp;use.<br>
+Rely&nbsp;on&nbsp;login&nbsp;and&nbsp;password&nbsp;from&nbsp;user<br>
+&nbsp;<br>
+Input:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'consumer_key'&nbsp;and&nbsp;'consumer_secret'&nbsp;(given&nbsp;by&nbsp;<a href="#gomiso">gomiso</a>&nbsp;when&nbsp;you&nbsp;create&nbsp;an&nbsp;application)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'login'&nbsp;and&nbsp;'password'&nbsp;from&nbsp;the&nbsp;user<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'tokensFile':&nbsp;file&nbsp;holder&nbsp;for&nbsp;tokens<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Output:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'True'&nbsp;or&nbsp;'False'&nbsp;based&nbsp;on&nbsp;if&nbsp;the&nbsp;authentification&nbsp;was&nbsp;successful&nbsp;or&nbsp;not<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-A&nbsp;file&nbsp;named&nbsp;'tokens'&nbsp;is&nbsp;created&nbsp;with&nbsp;user's&nbsp;tokens</tt></dd></dl>
+
+<dl><dt><a name="gomiso-checking"><strong>checking</strong></a>(self, media_id, season_num<font color="#909090">=0</font>, episode_num<font color="#909090">=0</font>, comment<font color="#909090">=''</font>, facebook<font color="#909090">='default'</font>, twitter<font color="#909090">='default'</font>)</dt><dd><tt>Posts&nbsp;a&nbsp;new&nbsp;checkin&nbsp;to&nbsp;the&nbsp;specified&nbsp;media&nbsp;for&nbsp;the&nbsp;authenticated&nbsp;user.&nbsp;<br>
+&nbsp;<br>
+Input:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'media_id':&nbsp;(Required)&nbsp;The&nbsp;specified&nbsp;media&nbsp;to&nbsp;create&nbsp;a&nbsp;checkin&nbsp;for.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'season_num':&nbsp;The&nbsp;specified&nbsp;season&nbsp;to&nbsp;create&nbsp;a&nbsp;checkin&nbsp;for&nbsp;(if&nbsp;the&nbsp;media&nbsp;is&nbsp;a&nbsp;TV&nbsp;Show).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'episode_num':&nbsp;The&nbsp;specified&nbsp;episode&nbsp;to&nbsp;create&nbsp;a&nbsp;checkin&nbsp;for&nbsp;(if&nbsp;the&nbsp;media&nbsp;is&nbsp;a&nbsp;TV&nbsp;Show).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'comment':&nbsp;The&nbsp;attached&nbsp;message&nbsp;for&nbsp;this&nbsp;checkin.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'facebook':&nbsp;Determines&nbsp;if&nbsp;the&nbsp;checkin&nbsp;should&nbsp;be&nbsp;posted&nbsp;to&nbsp;facebook.&nbsp;If&nbsp;this&nbsp;parameter&nbsp;is&nbsp;not&nbsp;specified,&nbsp;behavior&nbsp;defaults&nbsp;to&nbsp;the&nbsp;user's&nbsp;defaults.&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'twitter':&nbsp;Determines&nbsp;if&nbsp;the&nbsp;checkin&nbsp;should&nbsp;be&nbsp;posted&nbsp;to&nbsp;twitter.&nbsp;If&nbsp;this&nbsp;parameter&nbsp;is&nbsp;not&nbsp;specified,&nbsp;behavior&nbsp;defaults&nbsp;to&nbsp;the&nbsp;user's&nbsp;defaults.&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Output:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-The&nbsp;created&nbsp;check-in&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="gomiso-deleteFavorite"><strong>deleteFavorite</strong></a>(self, media_id)</dt><dd><tt>Unmarks&nbsp;a&nbsp;favorited&nbsp;media&nbsp;for&nbsp;authenticated&nbsp;user.&nbsp;<br>
+&nbsp;<br>
+Input<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'media_id':&nbsp;(Required)&nbsp;The&nbsp;media&nbsp;id&nbsp;for&nbsp;the&nbsp;info&nbsp;you&nbsp;would&nbsp;like&nbsp;to&nbsp;unfavorite.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Output:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-A&nbsp;200&nbsp;response&nbsp;code&nbsp;("success")&nbsp;if&nbsp;the&nbsp;unfavorite&nbsp;was&nbsp;successful.</tt></dd></dl>
+
+<dl><dt><a name="gomiso-findMedia"><strong>findMedia</strong></a>(self, title, kind<font color="#909090">='all'</font>, count<font color="#909090">=25</font>)</dt><dd><tt>Retrieves&nbsp;media&nbsp;listing&nbsp;information&nbsp;based&nbsp;on&nbsp;a&nbsp;given&nbsp;query.&nbsp;<br>
+&nbsp;<br>
+Input<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'title':&nbsp;(Required)&nbsp;Partial&nbsp;title&nbsp;for&nbsp;a&nbsp;given&nbsp;media.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'kind':&nbsp;Filter&nbsp;for&nbsp;the&nbsp;type&nbsp;of&nbsp;Media&nbsp;('all'&nbsp;per&nbsp;default&nbsp;or&nbsp;'tv'&nbsp;or&nbsp;'movie')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Output<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Array&nbsp;of&nbsp;basic&nbsp;Media&nbsp;objects</tt></dd></dl>
+
+<dl><dt><a name="gomiso-findUser"><strong>findUser</strong></a>(self, search_pattern, count<font color="#909090">=15</font>)</dt><dd><tt>Searches&nbsp;for&nbsp;users&nbsp;with&nbsp;a&nbsp;first&nbsp;name,&nbsp;last&nbsp;name,&nbsp;username&nbsp;or&nbsp;email&nbsp;that&nbsp;matches&nbsp;the&nbsp;given&nbsp;query&nbsp;string<br>
+&nbsp;<br>
+Input:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'search_pattern':&nbsp;(Required)&nbsp;The&nbsp;search&nbsp;query&nbsp;string.&nbsp;If&nbsp;this&nbsp;parameter&nbsp;is&nbsp;formatted&nbsp;like&nbsp;an&nbsp;email&nbsp;address,&nbsp;users&nbsp;with&nbsp;matching&nbsp;emails&nbsp;will&nbsp;be&nbsp;returned,&nbsp;otherwise&nbsp;matches&nbsp;will&nbsp;be&nbsp;found&nbsp;on&nbsp;the&nbsp;user's&nbsp;first&nbsp;name,&nbsp;last&nbsp;name&nbsp;and&nbsp;username&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'count':&nbsp;The&nbsp;number&nbsp;of&nbsp;results&nbsp;you'd&nbsp;like&nbsp;returned.&nbsp;The&nbsp;default&nbsp;is&nbsp;15&nbsp;if&nbsp;no&nbsp;value&nbsp;is&nbsp;passed,&nbsp;otherwise&nbsp;you&nbsp;may&nbsp;select&nbsp;a&nbsp;value&nbsp;between&nbsp;1&nbsp;and&nbsp;50.<br>
+&nbsp;<br>
+Output:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Array&nbsp;of&nbsp;user&nbsp;information</tt></dd></dl>
+
+<dl><dt><a name="gomiso-follow"><strong>follow</strong></a>(self, user_id)</dt><dd><tt>Account&nbsp;creates&nbsp;a&nbsp;following&nbsp;relationship&nbsp;with&nbsp;specified&nbsp;user&nbsp;by&nbsp;id.&nbsp;<br>
+&nbsp;<br>
+Input<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'user_id':&nbsp;(Required)&nbsp;The&nbsp;user&nbsp;id&nbsp;for&nbsp;the&nbsp;user&nbsp;that&nbsp;should&nbsp;be&nbsp;followed.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Output<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-A&nbsp;201&nbsp;response&nbsp;code&nbsp;("created")&nbsp;if&nbsp;the&nbsp;follow&nbsp;was&nbsp;successful.</tt></dd></dl>
+
+<dl><dt><a name="gomiso-followersFrom"><strong>followersFrom</strong></a>(self, user_id<font color="#909090">=0</font>)</dt><dd><tt>Retrieves&nbsp;all&nbsp;users&nbsp;that&nbsp;a&nbsp;specified&nbsp;account&nbsp;follows.&nbsp;If&nbsp;no&nbsp;user&nbsp;is&nbsp;specified,&nbsp;returns&nbsp;the&nbsp;follows&nbsp;of&nbsp;the&nbsp;authenticated&nbsp;user.<br>
+&nbsp;<br>
+Input<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'user_id':&nbsp;The&nbsp;user&nbsp;id&nbsp;for&nbsp;the&nbsp;info&nbsp;you&nbsp;would&nbsp;like&nbsp;to&nbsp;retrieve.&nbsp;If&nbsp;not&nbsp;specified,&nbsp;defaults&nbsp;to&nbsp;authenticated&nbsp;user.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Output<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Array&nbsp;of&nbsp;users&nbsp;information</tt></dd></dl>
+
+<dl><dt><a name="gomiso-getNotification"><strong>getNotification</strong></a>(self, notification_id)</dt><dd><tt>Retrieves&nbsp;a&nbsp;single&nbsp;notification&nbsp;<br>
+&nbsp;<br>
+Input:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'notification_id':&nbsp;(Required)&nbsp;The&nbsp;id&nbsp;for&nbsp;the&nbsp;notification&nbsp;you&nbsp;would&nbsp;like&nbsp;to&nbsp;retrieve.&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Output:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-The&nbsp;matching&nbsp;notification&nbsp;item&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="gomiso-getUserInfo"><strong>getUserInfo</strong></a>(self, user_id<font color="#909090">=0</font>)</dt><dd><tt>Retrieves&nbsp;relevant&nbsp;information&nbsp;from&nbsp;a&nbsp;user's&nbsp;profile.&nbsp;If&nbsp;no&nbsp;user&nbsp;is&nbsp;specified,&nbsp;returns&nbsp;the&nbsp;details&nbsp;of&nbsp;the&nbsp;authenticated&nbsp;user.&nbsp;<br>
+&nbsp;<br>
+Input:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'user_id':&nbsp;The&nbsp;user&nbsp;id&nbsp;for&nbsp;the&nbsp;info&nbsp;you&nbsp;would&nbsp;like&nbsp;to&nbsp;retrieve.&nbsp;If&nbsp;not&nbsp;specified,&nbsp;defaults&nbsp;to&nbsp;authenticated&nbsp;user.&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Output<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-JSON&nbsp;format&nbsp;with&nbsp;all&nbsp;user&nbsp;information</tt></dd></dl>
+
+<dl><dt><a name="gomiso-mediaCheckings"><strong>mediaCheckings</strong></a>(self, media_id, count<font color="#909090">=25</font>, since_id<font color="#909090">=0</font>, max_id<font color="#909090">=0</font>)</dt><dd><tt>Retrieves&nbsp;recent&nbsp;checkin&nbsp;information&nbsp;for&nbsp;a&nbsp;given&nbsp;user&nbsp;or&nbsp;media.&nbsp;<br>
+&nbsp;<br>
+Input:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'media_id':&nbsp;Retrieves&nbsp;all&nbsp;feed&nbsp;items&nbsp;for&nbsp;the&nbsp;given&nbsp;media.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'count':&nbsp;The&nbsp;total&nbsp;matching&nbsp;items&nbsp;to&nbsp;return&nbsp;(1-50).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'since_id':&nbsp;Retrieves&nbsp;all&nbsp;feed&nbsp;items&nbsp;after&nbsp;a&nbsp;given&nbsp;feed&nbsp;item&nbsp;id.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'max_id':&nbsp;Retrieves&nbsp;all&nbsp;feed&nbsp;items&nbsp;before&nbsp;a&nbsp;given&nbsp;feed&nbsp;item&nbsp;id.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Output:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Array&nbsp;of&nbsp;Checkin&nbsp;objects</tt></dd></dl>
+
+<dl><dt><a name="gomiso-mediaDetails"><strong>mediaDetails</strong></a>(self, media_id)</dt><dd><tt>Retrieves&nbsp;relevant&nbsp;information&nbsp;about&nbsp;specified&nbsp;media.&nbsp;<br>
+&nbsp;<br>
+Input<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'media_id':&nbsp;(Required)&nbsp;The&nbsp;media&nbsp;id&nbsp;for&nbsp;the&nbsp;info&nbsp;you&nbsp;would&nbsp;like&nbsp;to&nbsp;retrieve.&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Output<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-The&nbsp;extended&nbsp;Media&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="gomiso-mediaEpisodeInformation"><strong>mediaEpisodeInformation</strong></a>(self, media_id, season_num<font color="#909090">=-1</font>, episode_num<font color="#909090">=-1</font>)</dt><dd><tt>Retrieves&nbsp;information&nbsp;about&nbsp;a&nbsp;specific&nbsp;episode.&nbsp;In&nbsp;the&nbsp;case&nbsp;of&nbsp;an&nbsp;ambiguous&nbsp;query,&nbsp;returns&nbsp;the&nbsp;most&nbsp;recent&nbsp;episode&nbsp;matching&nbsp;given&nbsp;parameters&nbsp;(for&nbsp;instance,&nbsp;if&nbsp;only&nbsp;a&nbsp;media_id&nbsp;and&nbsp;season_num&nbsp;are&nbsp;sent,&nbsp;the&nbsp;last&nbsp;episode&nbsp;of&nbsp;media_id&nbsp;for&nbsp;season_num&nbsp;is&nbsp;returned)<br>
+&nbsp;<br>
+Input:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'media_id':&nbsp;(Required)&nbsp;The&nbsp;media_id&nbsp;for&nbsp;the&nbsp;episode&nbsp;you&nbsp;would&nbsp;like&nbsp;to&nbsp;retrieve.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'season_num':&nbsp;The&nbsp;season&nbsp;for&nbsp;the&nbsp;episode&nbsp;you&nbsp;would&nbsp;like&nbsp;to&nbsp;retrieve.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'episode_num':&nbsp;The&nbsp;episode&nbsp;number&nbsp;of&nbsp;the&nbsp;given&nbsp;season&nbsp;you'd&nbsp;like&nbsp;to&nbsp;retrieve<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Output:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-The&nbsp;returned&nbsp;episode&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="gomiso-mediaEpisodes"><strong>mediaEpisodes</strong></a>(self, media_id, count<font color="#909090">=5</font>, season_num<font color="#909090">=-1</font>)</dt><dd><tt>Retrieves&nbsp;a&nbsp;list&nbsp;of&nbsp;episodes&nbsp;for&nbsp;a&nbsp;given&nbsp;media&nbsp;item&nbsp;(TV&nbsp;Show)&nbsp;<br>
+&nbsp;<br>
+Input:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'media_id':<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'count'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'season_num'<br>
+&nbsp;<br>
+Output:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-episodes&nbsp;(Array):&nbsp;The&nbsp;matching&nbsp;episode&nbsp;objects<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-episode_count:&nbsp;The&nbsp;total&nbsp;number&nbsp;of&nbsp;episodes&nbsp;for&nbsp;the&nbsp;given&nbsp;media&nbsp;item<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-season_count:&nbsp;The&nbsp;total&nbsp;number&nbsp;of&nbsp;seasons&nbsp;for&nbsp;the&nbsp;given&nbsp;media&nbsp;item</tt></dd></dl>
+
+<dl><dt><a name="gomiso-mediaFeed"><strong>mediaFeed</strong></a>(self, media_id, count<font color="#909090">=25</font>, since_id<font color="#909090">=0</font>, max_id<font color="#909090">=0</font>)</dt><dd><tt>Retrieves&nbsp;feed&nbsp;for&nbsp;a&nbsp;given&nbsp;user&nbsp;or&nbsp;media.&nbsp;A&nbsp;feed&nbsp;includes&nbsp;items&nbsp;of&nbsp;various&nbsp;types,&nbsp;such&nbsp;as&nbsp;checkins,&nbsp;badges,&nbsp;links,&nbsp;notes,&nbsp;ratings,&nbsp;and&nbsp;votes.&nbsp;Properties&nbsp;of&nbsp;feed&nbsp;items&nbsp;vary&nbsp;depending&nbsp;on&nbsp;the&nbsp;type,&nbsp;documented&nbsp;in&nbsp;Object&nbsp;Representation&nbsp;below.&nbsp;<br>
+&nbsp;<br>
+Input:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'media_id':&nbsp;Retrieves&nbsp;all&nbsp;feed&nbsp;items&nbsp;for&nbsp;the&nbsp;given&nbsp;media.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'count':&nbsp;The&nbsp;total&nbsp;matching&nbsp;items&nbsp;to&nbsp;return&nbsp;(1-50).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'since_id':&nbsp;Retrieves&nbsp;all&nbsp;feed&nbsp;items&nbsp;after&nbsp;a&nbsp;given&nbsp;feed&nbsp;item&nbsp;id.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'max_id':&nbsp;Retrieves&nbsp;all&nbsp;feed&nbsp;items&nbsp;before&nbsp;a&nbsp;given&nbsp;feed&nbsp;item&nbsp;id.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Output:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Array&nbsp;of&nbsp;Feed&nbsp;item&nbsp;objects</tt></dd></dl>
+
+<dl><dt><a name="gomiso-mediaHomeFeed"><strong>mediaHomeFeed</strong></a>(self, media_id, count<font color="#909090">=25</font>, since_id<font color="#909090">=0</font>, max_id<font color="#909090">=0</font>)</dt><dd><tt>Retrieves&nbsp;home&nbsp;feed&nbsp;of&nbsp;the&nbsp;authenticated&nbsp;user,&nbsp;i.e.,&nbsp;all&nbsp;the&nbsp;checkins&nbsp;and&nbsp;badges&nbsp;of&nbsp;users&nbsp;that&nbsp;the&nbsp;authenticated&nbsp;user&nbsp;follows.&nbsp;<br>
+&nbsp;<br>
+Input:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'media_id':&nbsp;Retrieves&nbsp;all&nbsp;feed&nbsp;items&nbsp;for&nbsp;the&nbsp;given&nbsp;media.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'count':&nbsp;The&nbsp;total&nbsp;matching&nbsp;items&nbsp;to&nbsp;return&nbsp;(1-50).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'since_id':&nbsp;Retrieves&nbsp;all&nbsp;feed&nbsp;items&nbsp;after&nbsp;a&nbsp;given&nbsp;feed&nbsp;item&nbsp;id.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'max_id':&nbsp;Retrieves&nbsp;all&nbsp;feed&nbsp;items&nbsp;before&nbsp;a&nbsp;given&nbsp;feed&nbsp;item&nbsp;id.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Output:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Array&nbsp;of&nbsp;Feed&nbsp;item&nbsp;objects</tt></dd></dl>
+
+<dl><dt><a name="gomiso-notifications"><strong>notifications</strong></a>(self)</dt><dd><tt>Retrieves&nbsp;a&nbsp;list&nbsp;of&nbsp;a&nbsp;user's&nbsp;notifications.&nbsp;<br>
+&nbsp;<br>
+Input:<br>
+&nbsp;<br>
+Output:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Array&nbsp;representing&nbsp;the&nbsp;matching&nbsp;notification&nbsp;item&nbsp;objects</tt></dd></dl>
+
+<dl><dt><a name="gomiso-trending"><strong>trending</strong></a>(self, count<font color="#909090">=25</font>)</dt><dd><tt>Retrieves&nbsp;a&nbsp;list&nbsp;of&nbsp;currently&nbsp;trending&nbsp;media.&nbsp;Trending&nbsp;refers&nbsp;to&nbsp;media&nbsp;with&nbsp;the&nbsp;most&nbsp;recent&nbsp;checkins.&nbsp;<br>
+&nbsp;<br>
+Input<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'count':&nbsp;The&nbsp;total&nbsp;matching&nbsp;items&nbsp;to&nbsp;return&nbsp;(1-100)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Output<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Array&nbsp;of&nbsp;basic&nbsp;Media&nbsp;objects</tt></dd></dl>
+
+<dl><dt><a name="gomiso-unfollow"><strong>unfollow</strong></a>(user_id)</dt><dd><tt>Account&nbsp;removes&nbsp;a&nbsp;follow&nbsp;relationship&nbsp;with&nbsp;specified&nbsp;user&nbsp;by&nbsp;id.&nbsp;<br>
+&nbsp;<br>
+Input<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'user_id':&nbsp;(Required)&nbsp;The&nbsp;user&nbsp;id&nbsp;for&nbsp;the&nbsp;user&nbsp;that&nbsp;should&nbsp;no&nbsp;longer&nbsp;be&nbsp;followed.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Output<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-A&nbsp;200&nbsp;response&nbsp;code&nbsp;("success")&nbsp;if&nbsp;the&nbsp;unfollow&nbsp;was&nbsp;successful.</tt></dd></dl>
+
+<dl><dt><a name="gomiso-userBadges"><strong>userBadges</strong></a>(self, user_id<font color="#909090">=0</font>)</dt><dd><tt>Retrieves&nbsp;information&nbsp;about&nbsp;either&nbsp;the&nbsp;comprehensive&nbsp;set&nbsp;of&nbsp;badges<br>
+&nbsp;<br>
+Input:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'user_id':&nbsp;The&nbsp;user&nbsp;id&nbsp;that&nbsp;you'd&nbsp;like&nbsp;applied&nbsp;to&nbsp;the&nbsp;badge&nbsp;list&nbsp;(badges&nbsp;that&nbsp;have&nbsp;already&nbsp;been&nbsp;awarded&nbsp;to&nbsp;that&nbsp;user&nbsp;will&nbsp;have&nbsp;a&nbsp;flag&nbsp;set)<br>
+&nbsp;<br>
+Output:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Array&nbsp;of&nbsp;Badge&nbsp;objects</tt></dd></dl>
+
+<dl><dt><a name="gomiso-userCheckings"><strong>userCheckings</strong></a>(self, user_id, count<font color="#909090">=25</font>, since_id<font color="#909090">=0</font>, max_id<font color="#909090">=0</font>)</dt><dd><tt>Retrieves&nbsp;recent&nbsp;checkin&nbsp;information&nbsp;for&nbsp;a&nbsp;given&nbsp;user&nbsp;or&nbsp;media.&nbsp;<br>
+&nbsp;<br>
+Input:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'user_id':&nbsp;Retrieves&nbsp;all&nbsp;feed&nbsp;items&nbsp;for&nbsp;the&nbsp;given&nbsp;user.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'count':&nbsp;The&nbsp;total&nbsp;matching&nbsp;items&nbsp;to&nbsp;return&nbsp;(1-50).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'since_id':&nbsp;Retrieves&nbsp;all&nbsp;feed&nbsp;items&nbsp;after&nbsp;a&nbsp;given&nbsp;feed&nbsp;item&nbsp;id.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'max_id':&nbsp;Retrieves&nbsp;all&nbsp;feed&nbsp;items&nbsp;before&nbsp;a&nbsp;given&nbsp;feed&nbsp;item&nbsp;id.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Output:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Array&nbsp;of&nbsp;Checkin&nbsp;objects</tt></dd></dl>
+
+<dl><dt><a name="gomiso-userFavorites"><strong>userFavorites</strong></a>(self, user_id)</dt><dd><tt>Retrieves&nbsp;a&nbsp;list&nbsp;of&nbsp;favorited&nbsp;media&nbsp;by&nbsp;user.&nbsp;Favorited&nbsp;refers&nbsp;to&nbsp;media&nbsp;that&nbsp;the&nbsp;user&nbsp;has&nbsp;marked&nbsp;as&nbsp;favorites.&nbsp;<br>
+&nbsp;<br>
+Input:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'user_id':&nbsp;The&nbsp;user&nbsp;id&nbsp;for&nbsp;the&nbsp;info&nbsp;you&nbsp;would&nbsp;like&nbsp;to&nbsp;retrieve.&nbsp;If&nbsp;not&nbsp;specified,&nbsp;defaults&nbsp;to&nbsp;authenticated&nbsp;user.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Output:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Array&nbsp;of&nbsp;basic&nbsp;Media&nbsp;objects</tt></dd></dl>
+
+<dl><dt><a name="gomiso-userFeed"><strong>userFeed</strong></a>(self, user_id, count<font color="#909090">=25</font>, since_id<font color="#909090">=0</font>, max_id<font color="#909090">=0</font>)</dt><dd><tt>Retrieves&nbsp;feed&nbsp;for&nbsp;a&nbsp;given&nbsp;user&nbsp;or&nbsp;media.&nbsp;A&nbsp;feed&nbsp;includes&nbsp;items&nbsp;of&nbsp;various&nbsp;types,&nbsp;such&nbsp;as&nbsp;checkins,&nbsp;badges,&nbsp;links,&nbsp;notes,&nbsp;ratings,&nbsp;and&nbsp;votes.&nbsp;Properties&nbsp;of&nbsp;feed&nbsp;items&nbsp;vary&nbsp;depending&nbsp;on&nbsp;the&nbsp;type,&nbsp;documented&nbsp;in&nbsp;Object&nbsp;Representation&nbsp;below.&nbsp;<br>
+&nbsp;<br>
+Input:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'user_id':&nbsp;Retrieves&nbsp;all&nbsp;feed&nbsp;items&nbsp;for&nbsp;the&nbsp;given&nbsp;user.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'count':&nbsp;The&nbsp;total&nbsp;matching&nbsp;items&nbsp;to&nbsp;return&nbsp;(1-50).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'since_id':&nbsp;Retrieves&nbsp;all&nbsp;feed&nbsp;items&nbsp;after&nbsp;a&nbsp;given&nbsp;feed&nbsp;item&nbsp;id.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'max_id':&nbsp;Retrieves&nbsp;all&nbsp;feed&nbsp;items&nbsp;before&nbsp;a&nbsp;given&nbsp;feed&nbsp;item&nbsp;id.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Output:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Array&nbsp;of&nbsp;Feed&nbsp;item&nbsp;objects</tt></dd></dl>
+
+<dl><dt><a name="gomiso-userHomeFeed"><strong>userHomeFeed</strong></a>(self, user_id, count<font color="#909090">=25</font>, since_id<font color="#909090">=0</font>, max_id<font color="#909090">=0</font>)</dt><dd><tt>Retrieves&nbsp;home&nbsp;feed&nbsp;of&nbsp;the&nbsp;authenticated&nbsp;user,&nbsp;i.e.,&nbsp;all&nbsp;the&nbsp;checkins&nbsp;and&nbsp;badges&nbsp;of&nbsp;users&nbsp;that&nbsp;the&nbsp;authenticated&nbsp;user&nbsp;follows.&nbsp;<br>
+&nbsp;<br>
+Input:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'user_id':&nbsp;Retrieves&nbsp;all&nbsp;feed&nbsp;items&nbsp;for&nbsp;the&nbsp;given&nbsp;user.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'count':&nbsp;The&nbsp;total&nbsp;matching&nbsp;items&nbsp;to&nbsp;return&nbsp;(1-50).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'since_id':&nbsp;Retrieves&nbsp;all&nbsp;feed&nbsp;items&nbsp;after&nbsp;a&nbsp;given&nbsp;feed&nbsp;item&nbsp;id.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'max_id':&nbsp;Retrieves&nbsp;all&nbsp;feed&nbsp;items&nbsp;before&nbsp;a&nbsp;given&nbsp;feed&nbsp;item&nbsp;id.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Output:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Array&nbsp;of&nbsp;Feed&nbsp;item&nbsp;objects</tt></dd></dl>
+
+<dl><dt><a name="gomiso-usersFollowing"><strong>usersFollowing</strong></a>(self, user_id<font color="#909090">=0</font>)</dt><dd><tt>Retrieves&nbsp;all&nbsp;users&nbsp;that&nbsp;follow&nbsp;a&nbsp;specified&nbsp;account.&nbsp;If&nbsp;no&nbsp;user&nbsp;is&nbsp;specified,&nbsp;returns&nbsp;the&nbsp;followers&nbsp;of&nbsp;the&nbsp;authenticated&nbsp;user.<br>
+&nbsp;<br>
+Input:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-'user_id':&nbsp;The&nbsp;user&nbsp;id&nbsp;for&nbsp;the&nbsp;info&nbsp;you&nbsp;would&nbsp;like&nbsp;to&nbsp;retrieve.&nbsp;If&nbsp;not&nbsp;specified,&nbsp;defaults&nbsp;to&nbsp;authenticated&nbsp;user.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Output:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Array&nbsp;of&nbsp;users&nbsp;information</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__scriptID__</strong> = 'script.gomiso'</dl>
+
+<dl><dt><strong>access_tokens</strong> = {}</dl>
+
+<dl><dt><strong>consumer_credentials</strong> = {}</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__author__</strong> = 'Mathieu Feulvarch'<br>
+<strong>__copyright__</strong> = 'Copyright 2011, Mathieu Feulvarch '<br>
+<strong>__email__</strong> = 'mathieu@feulvarch.fr'<br>
+<strong>__license__</strong> = 'GPL'<br>
+<strong>__maintainer__</strong> = 'Mathieu Feulvarch'<br>
+<strong>__status__</strong> = 'Production'<br>
+<strong>__version__</strong> = '1.0'<br>
+<strong>module_name</strong> = 'os'<br>
+<strong>needed_modules</strong> = ['oauth2', 'cgi', 'urllib', 'os']</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Mathieu&nbsp;Feulvarch</td></tr></table>
+</body></html>
